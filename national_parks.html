@@ -36,13 +36,18 @@
                         <!-- NAVBAR END -->
         </nav>
         <div class="container">
-            <!-- DROPDOWN -->
-
-            <!-- BUTTON DISPLAYS DATA FROM LOAD DATA FUNCTION -->
+            <!-- LOCATIONS DROPDOWN -->
+            <select id="locationList">
+            </select>
             <button onclick="locationDisplayDropDown()">
                 click here
-            </button><select id="locationList">
+            </button>
+            <!-- PARKS TYPE DROPDOWN -->
+            <select id="parksTypeList">
             </select>
+            <button onclick="parksTypeDropDown()">
+                click here
+            </button>
         </div>
     </header>
     </header>
@@ -54,6 +59,7 @@
     </footer>
     <!-- JAVASCRIPT LINKS -->
     <script src="scripts/locationData.js"></script>
+    <script src="/scripts/parkTypeData.js"></script>
     <script src="scripts/parksDropDown.js"></script>
 </body>
 
