@@ -4,6 +4,8 @@ window.onload = function () {
   parksTypeDropDown();
   nationalParksDropDown();
 };
+//variable for selectedValue on line 25
+let selectedValue;
 function locationDisplayDropDown() {
   // load the dropdown list
   const dropDownList = document.getElementById("locationList");
@@ -20,11 +22,11 @@ function locationDisplayDropDown() {
   // looks up items in dropdowns options collection
   if (locationList.selectedIndex >= 0) {
     let text = locationList.options[locationList.selectedIndex].text;
-    let value = locationList.value;
-    /*  // test
-    alert(`Selected: ${text} \nValue: ${value}`);   */
+    selectedValue = locationList.value;
+    // filtering
+    let filteredLocation = locationsArray.filter(location => location == selectedValue);
   }
-};
+}
 
 function parksTypeDropDown() {
   // load the dropdown list
@@ -42,6 +44,7 @@ function parksTypeDropDown() {
   if (parksTypeList.selectedIndex >= 0) {
     let text = parksTypeList.options[parksTypeList.selectedIndex].text;
     let value = parksTypeList.value;
+    // filtering
   }
 };
 
@@ -61,8 +64,6 @@ function nationalParksDropDown() {
   if (locationList.selectedIndex >= 0) {
     let text = nationalParksList.options[nationalParksList.selectedIndex].text;
     let value = nationalParksList.value;
+    // filtering
   }
 };
-
-
-/* reminders: use alert("Selected: " + text + "\nValue: " + value); to test javascript. break every thing down in pseudo code */
