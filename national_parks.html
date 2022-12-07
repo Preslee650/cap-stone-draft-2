@@ -37,29 +37,48 @@
         </nav>
         <div class="container">
             <!-- LOCATIONS DROPDOWN -->
-            <select id="locationList">
+            <select id="locationList" onchange="nationalParksDropDown()">
             </select>
-            <button onclick="locationDisplayDropDown()">
-                click here
-            </button>
             <!-- PARKS TYPE DROPDOWN -->
             <select id="parksTypeList">
-            </select>
-            <button onclick="parksTypeDropDown()">
-                click here
-            </button>
+            </select><br>
             <!-- NATIONAL PARKS DROPDOWN -->
             <select id="nationalParksList">
             </select>
-            <button onclick="nationalParksDropDown()">
-                click here
-            </button>
         </div>
     </header>
     </header>
-    <main>
-        <div id="app"></div>
-        <div id="locations"></div>
+    <main id="cardsContainer">
+        <!-- national parks display cards -->
+        <div class="card" style="width: 18rem;">
+            <img class="card-img" src="/images/Bond-StoryImage_3.jpg">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-descrip">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+            </div>
+        </div>
+        
+        <div class="card" style="width: 18rem;">
+            <img class="card-img" src="/images/Cabot-StoryImg.jpg">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-descrip">Some quick example text to build on the card title and make up the bulk of
+                    the
+                    card's content.</p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img" src="/images/Cannon-StoryImg_2.jpg">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-descrip">Some quick example text to build on the card title and make up the bulk
+                    of
+                    the card's content.</p>
+            </div>
+        </div>
+
     </main>
     <footer>
     </footer>
@@ -68,6 +87,7 @@
     <script src="/scripts/parkTypeData.js"></script>
     <script src="/scripts/nationalParkData.js"></script>
     <script src="scripts/parksDropDown.js"></script>
+    <script src="/scripts/cardsRender.js"></script>
 </body>
 
 </html>

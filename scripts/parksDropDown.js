@@ -4,8 +4,7 @@ window.onload = function () {
   parksTypeDropDown();
   nationalParksDropDown();
 };
-//variable for selectedValue on line 25
-let selectedValue;
+
 function locationDisplayDropDown() {
   // load the dropdown list
   const dropDownList = document.getElementById("locationList");
@@ -18,13 +17,6 @@ function locationDisplayDropDown() {
     // append the option as a child of (inside) the
     // select element
     dropDownList.appendChild(theOption);
-  }
-  // looks up items in dropdowns options collection
-  if (locationList.selectedIndex >= 0) {
-    let text = locationList.options[locationList.selectedIndex].text;
-    selectedValue = locationList.value;
-    // filtering
-    let filteredLocation = locationsArray.filter(location => location == selectedValue);
   }
 }
 
@@ -44,26 +36,27 @@ function parksTypeDropDown() {
   if (parksTypeList.selectedIndex >= 0) {
     let text = parksTypeList.options[parksTypeList.selectedIndex].text;
     let value = parksTypeList.value;
-    // filtering
   }
 };
 
 function nationalParksDropDown() {
+  if (locationList.selectedIndex >= 0) {
+    let text = locationList.options[locationList.selectedIndex].text;
+    selectedLocationValue = locationList.value;
+  }
+  let parksByLocation = nationalParksArray.filter(park => park.State == selectedLocationValue);
   // load the dropdown list
-  const dropDownList3 = document.getElementById("nationalParksList");
-  let length = nationalParksArray.length;
+  const parksDropDown = document.getElementById("nationalParksList");
+  parksDropDown.innerHTML = ""
+  let length = parksByLocation.length;
   for (let i = 0; i < length; i++) {
 
     // create the option element
-    let theOption3 = new Option(nationalParksArray[i].LocationName, nationalParksArray[i].LocationName);
+    let theOption3 = new Option(parksByLocation[i].LocationName, parksByLocation[i].LocationName);
 
     // append the option as a child of (inside) the
     // select element
-    dropDownList3.appendChild(theOption3);
+    parksDropDown.appendChild(theOption3);
   }
-  if (locationList.selectedIndex >= 0) {
-    let text = nationalParksList.options[nationalParksList.selectedIndex].text;
-    let value = nationalParksList.value;
-    // filtering
-  }
+  renderParksCards(parksByLocation);
 };
