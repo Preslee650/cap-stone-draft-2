@@ -5,6 +5,11 @@ body {
     margin: 0;
 }
 
+/* DROP-DOWN CSS */
+.container {
+    text-align: center;
+}
+
 /* DISPLAY CARD CSS */
 img {
     max-width: 100%;
@@ -61,7 +66,7 @@ img {
     margin: 0;
 }
 
-/* NAVBAR CSS */ 
+/* NAVBAR CSS */
 body {
     font-family: 'Varela Round', sans-serif;
 }

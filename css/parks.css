@@ -1,0 +1,15 @@
+/* DROP-DOWN CSS */
+.container {
+    text-align: center;
+}
+
+/* DISPLAY CARDS CSS */
+#cardsContainer {
+    width: 1000px;
+    margin: auto;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+}
